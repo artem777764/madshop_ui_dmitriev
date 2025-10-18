@@ -15,8 +15,6 @@ class AppImageButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final colorScheme = Theme.of(context).colorScheme;
-    
     return Container(
       decoration: BoxDecoration(
         boxShadow: [AppShadows.light],
@@ -25,8 +23,6 @@ class AppImageButton extends StatelessWidget {
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(
-          backgroundColor: colorScheme.primary,
-          foregroundColor: colorScheme.onPrimary,
           shape: const CircleBorder(),
           padding: EdgeInsets.all(size * 0.2),
         ),
@@ -34,7 +30,6 @@ class AppImageButton extends StatelessWidget {
           imagePath,
           width: size,
           height: size,
-          color: colorScheme.onPrimary,
         ),
       ),
     );

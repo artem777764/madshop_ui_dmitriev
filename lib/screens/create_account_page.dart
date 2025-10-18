@@ -17,40 +17,57 @@ class CreateAccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(30),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Container(
-                alignment: Alignment.centerLeft,
-                child: Text(
-                  'Create\nAccount',
-                  style: AppTextStyles.headlineLarge,
-                ),
-              ),
-              SizedBox(height: 176),
-              AppInput(
-                placeholder: 'Email'
-              ),
-              SizedBox(height: 8),
-              AppInput(
-                placeholder: 'Password'
-              ),
-              SizedBox(height: 8),
-              AppInput(
-                placeholder: 'Your number'
-              ),
-              SizedBox(height: 52),
-              AppButton(
-                label: 'Done',
-                onPressed: () => _goToLoginPage(context),
-              ),
-            ],
+      body: Stack(
+        children: [
+          Align(
+            alignment: Alignment.topLeft,
+            child: Image.asset('assets/images/bubble1.png'),
           ),
-        )
-      ),
+          Align(
+            alignment: Alignment.topRight,
+            child: Padding(
+              padding: const EdgeInsets.only(top: 90),
+              child: Image.asset('assets/images/bubble2.png'),
+            ),
+          ),
+          Center(
+            child: Padding(
+              padding: const EdgeInsets.all(30),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Container(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Create\nAccount',
+                      style: AppTextStyles.headlineLarge,
+                    ),
+                  ),
+                  SizedBox(height: 176),
+                  AppInput(
+                    placeholder: 'Email',
+                  ),
+                  SizedBox(height: 8),
+                  AppInput(
+                    placeholder: 'Password',
+                    isPassword: true,
+                  ),
+                  SizedBox(height: 8),
+                  AppInput(
+                    placeholder: 'Your number',
+                    imagePath: 'assets/images/russian_flag.png',
+                  ),
+                  SizedBox(height: 52),
+                  AppButton(
+                    label: 'Done',
+                    onPressed: () => _goToLoginPage(context),
+                  ),
+                ],
+              ),
+            )
+          ),
+        ],
+      )
     );
   }
 }

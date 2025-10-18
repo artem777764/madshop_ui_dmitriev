@@ -34,6 +34,12 @@ class AppTextStyles {
     color: AppColors.textBlack,
   );
 
+  static const TextStyle contextMediumSmallBold = TextStyle(
+    fontSize: 15,
+    fontWeight: FontWeight.bold,
+    color: AppColors.textBlack,
+  );
+
   static const TextStyle contextSmall = TextStyle(
     fontSize: 12,
     fontWeight: FontWeight.normal,
